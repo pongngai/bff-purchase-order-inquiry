@@ -3,10 +3,10 @@
 package model
 
 type Order struct {
-	OrderID     int64  `json:"orderId"`
-	Price       int64  `json:"price"`
-	Quantity    int64  `json:"quantity"`
-	CustomerID  int64  `json:"customerId"`
-	TotalAmount int64  `json:"totalAmount"`
+	OrderID     int    `json:"orderId"`
+	Price       int    `json:"price"`
+	Quantity    int    `json:"quantity"`
+	CustomerID  int    `json:"customerId"`
+	TotalAmount int    `json:"totalAmount"`
 	Status      string `json:"status"`
 }

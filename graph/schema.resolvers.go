@@ -17,11 +17,11 @@ func (r *queryResolver) Order(ctx context.Context) (*model.Order, error) {
 		return nil, err
 	}
 	return &model.Order{
-		OrderID:     order.OrderId,
-		Price:       order.Price,
-		Quantity:    order.Quantity,
-		CustomerID:  order.CustomerId,
-		TotalAmount: order.TotalAmount,
+		OrderID:     int(order.OrderId),
+		Price:       int(order.Price),
+		Quantity:    int(order.Quantity),
+		CustomerID:  int(order.CustomerId),
+		TotalAmount: int(order.TotalAmount),
 		Status:      order.Status,
 	}, nil
 }
