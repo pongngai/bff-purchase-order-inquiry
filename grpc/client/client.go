@@ -3,13 +3,14 @@ package client
 import (
 	"context"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 	"log"
 
 	pb "com.ai.bff-purchase-order-inquiry/proto"
 )
 
 func GetOrder(ctx context.Context, id string) (*pb.GetOrderResponse, error) {
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	conn, err := grpc.Dial("localhost:50051", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Fatalf("Failed to connect to gRPC server: %v", err)
 	}
