@@ -1,0 +1,16 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Order {
+  orderId: Int!
+  price: Int!
+  quantity: Int!
+  customerId: Int!
+  totalAmount: Int!
+  status: String!
+}
+
+type Query {
+  order: Order!
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "./proto";
+
+message GetOrderRequest {
+  string id = 1;
+}
+
+message GetOrderResponse {
+  int64 orderId = 1;
+  int64 price = 2;
+  int64 quantity = 3;
+  int64 customerId = 4;
+  int64 totalAmount = 5;
+  string status = 6;
+}
+
+service OrderService {
+  rpc GetOrder(GetOrderRequest) returns (GetOrderResponse);
+}
